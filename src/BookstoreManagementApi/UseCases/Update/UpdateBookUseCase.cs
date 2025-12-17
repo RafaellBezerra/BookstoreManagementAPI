@@ -46,7 +46,7 @@ public class UpdateBookUseCase
 
         if (string.IsNullOrWhiteSpace(request.Title)) errors.Add("Title is required");
         if (string.IsNullOrWhiteSpace(request.Author)) errors.Add("Author is required");
-        if (request.Price < 0) errors.Add("The price cannot be lower than zero.");
+        if (request.Price <= 0) errors.Add("The price cannot be lower than zero.");
         if (request.Stock < 0) errors.Add("The stock cannot be lower than zero.");
 
         foreach (var genre in request.Genre)
